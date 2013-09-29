@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>jquery-modalMsg example page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/index.css" rel="stylesheet" />
+        <link href="css/modalmsg.css" rel="stylesheet" />
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>jquery modalMsg plugin example page</h1>
+        <section>
+          <h2>Simple modal popup</h2>
+
+          <button id="action_modal_1">Click me!</button>
+
+          <div id="modal_1" class="modal-popup-wrapper">
+            <div class="modalMsg">
+                <h1 class="modalMsg-message1"></h1>
+                <button class="modalMsg-button1"></button>
+            </div>
+          </div>
+
+        </section>
+        <section>
+          <h2>Simple modal popup with active overlay</h2>
+
+          <button id="action_modal_2">Click me!</button>
+
+          <div id="modal_2" class="modal-popup-wrapper">
+            <div class="modalMsg">
+                <h1 class="modalMsg-message1"></h1>
+                <button class="modalMsg-button1"></button>
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Simple modal popup with many buttons and messages</h2>
+
+          <button id="action_modal_3">Click me!</button>
+
+          <div id="modal_3" class="modal-popup-wrapper">
+            <div class="modalMsg">
+                <h1 class="modalMsg-message1"></h1>
+                <h2 class="modalMsg-message2"></h2>
+                <p>This is a static text with <span class="modalMsg-message3"></span> </p>
+                <button class="modalMsg-button1"></button>
+                <button class="modalMsg-button2"></button>
+                <button class="modalMsg-button3"></button>
+            </div>
+          </div>
+
+        </section>
+        
+
+        <script src="../components/jquery/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="../lib/modalMsg.js"></script>
+
+
+    </body>
+</html>

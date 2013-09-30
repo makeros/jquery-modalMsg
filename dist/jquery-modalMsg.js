@@ -2,7 +2,7 @@
  * modalMsg jQuery plugin
  * 
  * Modal simple popups. 
- * @author arek czogala <arek@pwn.pl>
+ * @author arek czogala <mail@arekczogala.pl>
  *
  */
 (function ($) {
@@ -11,7 +11,14 @@
 
     modalMsg : function (opt) {
 
-      var options;
+      var 
+        options,
+        STATIC = {
+          overlayClass : 'modalMsg-overlay',
+          messageClass : 'modalMsg-message',
+          buttonClass : 'modalMsg-button'
+        }
+        ;
 
       /*example default options*/
       options = {
@@ -39,12 +46,16 @@
 
       $.extend(options, opt);
 
+      console.log('modalMsg options: ', options);
 
       return this.each(function () {
 
-        var msgNr, btnNr, $btn = [], $msg = [], $overlay, $modal = $(this);
+        var msgNr, btnNr, $btn = [], $msg = [], $overlay, $modal = $(this), $container;
         var self = this;
-        // this.testing = 'wtf?';
+
+        $container = ($(options.container).length)? $(options.container) : $('#'+options.container);
+
+        console.log('container: ',$container);
 
         var bindDataToModal = function () {
 
@@ -54,7 +65,7 @@
           for (var msg_index=0; msg_index < options.messages.length; msg_index++){
 
             msgNr = msg_index+1;
-            $msg[msg_index] = $modal.find('.modalMsg-message'+msgNr);
+            $msg[msg_index] = $modal.find('.'+STATIC.messageClass+msgNr);
             $msg[msg_index].html(options.messages[msg_index]);
 
           }
@@ -63,7 +74,7 @@
           for (var btn_index=0; btn_index < options.buttons.length; btn_index++){
 
             btnNr = btn_index+1;
-            $btn[btn_index] = $modal.find('.modalMsg-button'+btnNr);
+            $btn[btn_index] = $modal.find('.'+STATIC.buttonClass+btnNr);
 
             $btn[btn_index].html(options.buttons[btn_index].name);
 
@@ -110,13 +121,21 @@
           }
           else {
 
-            $('.modalMsg-overlay').unbind('click').remove();
+            $('.'+STATIC.overlayClass).unbind('click').remove();
 
           }
 
 
-          $('body').css({'overflow' : ''});
+          $container.css({'overflow' : ''});
 
+        };
+
+        var checkOverlayAction = function () {
+          if (!options.overlayBlocked) {
+
+            $overlay.click(hideAndDestroy);
+
+          }
         };
 
         bindDataToModal();
@@ -129,26 +148,26 @@
         } 
         else {
 
-          $overlay = $('<div class="modalMsg-overlay"></div>');
+          $overlay = $('<div class="'+STATIC.overlayClass+'"></div>');
           $overlay.appendTo($modal);
           
         }
 
+
+        checkOverlayAction();
+
         console.log('modal popup overlay: ',options.overlayId, $overlay, options.overlayBlocked);
 
-        if (!options.overlayBlocked) {
-
-          $overlay.click(hideAndDestroy);
-
-        }
-
-        /*bind global modal clicks*/
 
         $overlay.show();
-        $('body').css({'overflow' : 'hidden'});
-        $modal.show();
+        $container.css({'overflow' : 'hidden'});
 
-      })[0];
+        $modal.css({
+          'top': $container.scrollTop()
+        });
+        $modal.appendTo($container).show();
+
+      });
 
 
     }

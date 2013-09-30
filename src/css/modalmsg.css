@@ -1,6 +1,6 @@
 .modal-popup-wrapper{
   display: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -22,7 +22,7 @@
 .modalMsg-overlay {
   display: none;
   z-index: 191;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;

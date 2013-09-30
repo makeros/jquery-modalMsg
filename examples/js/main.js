@@ -56,5 +56,22 @@ $(document).ready(function () {
 
   });
 
+  $("#action_modal_4").click(function () {
+
+    $('#modal_4').modalMsg({
+      container : 'modal_container',
+      messages : ['Lorem ipsum dolor 1'],
+      buttons : [
+        {
+          name : 'OK',
+          callback : null
+        }
+
+      ],
+      
+    });
+
+  });
+
 
 });

@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/index.css" rel="stylesheet" />
-        <link href="css/modalmsg.css" rel="stylesheet" />
+        <link href="../lib/css/modalmsg.css" rel="stylesheet" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>
     <body>
@@ -32,7 +32,7 @@
 
         </section>
         <section>
-          <h2>Simple modal popup with active overlay</h2>
+          <h2>Modal with clickable overlay</h2>
 
           <button id="action_modal_2">Click me!</button>
 
@@ -46,7 +46,7 @@
         </section>
 
         <section>
-          <h2>Simple modal popup with many buttons and messages</h2>
+          <h2>Modal with many buttons and messages</h2>
 
           <button id="action_modal_3">Click me!</button>
 
@@ -58,6 +58,23 @@
                 <button class="modalMsg-button1"></button>
                 <button class="modalMsg-button2"></button>
                 <button class="modalMsg-button3"></button>
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Modal popup attached to different container</h2>
+
+          <button id="action_modal_4">Click me!</button>
+
+          <div id="modal_container" style="position:relative;width:500px;height:500px; background-color: green;"></div>
+
+          <div id="modal_4" class="modal-popup-wrapper">
+            <div class="modalMsg">
+                <h1 class="modalMsg-message1"></h1>
+                <button class="modalMsg-button1"></button>
+
             </div>
           </div>
 

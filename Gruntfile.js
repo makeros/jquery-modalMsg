@@ -36,6 +36,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    cssmin : {
+
+      combine: {
+        files: {
+          'dist/css/<%= pkg.name %>.min.css': ['src/css/*.css']
+        }
+      }
+    },
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'qunit']
@@ -47,9 +55,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.registerTask('test', ['jshint', 'qunit']);
-
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('dist', ['concat:dist', 'uglify:dist', 'cssmin:dist']);
 
 };

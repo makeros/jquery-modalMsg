@@ -1,15 +1,16 @@
 {
-    "name": "jquery-modalMsg",
-    "version" : "0.1.0",
-    "author" : "arek czogala <mail@arekczogala.pl", 
-    "dependencies": {
-        "grunt": "~0.4.1",
-        "grunt-cli": "~0.1.9",
-        "grunt-jquerybuilder": "~0.1.4",
-        "grunt-contrib-uglify": "~0.2.4",
-        "grunt-contrib-jshint": "~0.6.4",
-        "grunt-contrib-qunit": "~0.3.0",
-        "grunt-contrib-watch": "~0.5.3",
-        "grunt-contrib-concat": "~0.3.0"
-    }
+  "name": "jquery-modalMsg",
+  "version": "0.1.0",
+  "author": "arek czogala <mail@arekczogala.pl",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.9",
+    "grunt-jquerybuilder": "~0.1.4",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-qunit": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-cssmin": "~0.6.2"
+  }
 }

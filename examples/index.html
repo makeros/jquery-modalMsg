@@ -19,14 +19,71 @@
         <![endif]-->
         <h1>jquery modalMsg plugin example page</h1>
         <section>
+          <h2>Example code</h2>
+          <div id="modal_example" class="modal-popup-wrapper">
+              <div class="modalMsg">
+                  <h1 class="modalMsg-message1"></h1>
+                  <p>The second message is: <span class="modalMsg-message2"></span></p>
+                  <button class="modalMsg-button1"></button>
+                  <button class="modalMsg-button2"></button>
+                  <button class="modalMsg-button3"></button>
+              </div>
+            </div>
+          <xmp>
+            <div id="modal_example" class="modal-popup-wrapper">
+              <div class="modalMsg">
+                  <h1 class="modalMsg-message1"></h1>
+                  <h1 class="modalMsg-message1"></h1>
+                  <button class="modalMsg-button1"></button>
+                  <button class="modalMsg-button2"></button>
+                  <button class="modalMsg-button3"></button>
+              </div>
+            </div>
+            <script>
+            $("#action_modal_example").click(function () {
+
+              $('#modal_example').modalMsg({
+                messages : ['Lorem ipsum dolor sit amet',
+                  'consectetur adipiscing elit.'],
+                buttons : [
+                  {
+                    name : 'OK',
+                    callback : null
+                  },
+                  {
+                    name : 'Alert!',
+                    callback : function () {
+                      alert("don't panic ;)")
+                    },
+                    defaultClose: true
+                  },
+                  {
+                    name : 'Alert^2!',
+                    callback : function () {
+                      alert("now you can panic ;)")
+                    },
+                    defaultClose: false 
+                  }
+                ],
+                overlayBlocked : false
+                
+              });
+
+            });
+            </script>
+          </xmp>
+          <button id="action_modal_example">Click  me!</button>
+        </section>
+        <section>
           <h2>Simple modal popup</h2>
 
           <button id="action_modal_1">Click me!</button>
 
           <div id="modal_1" class="modal-popup-wrapper">
-            <div class="modalMsg">
+            <div class="modalMsg my-own-modalMsg">
+                <button class="modalMsg-button2 close-btn"></button>
                 <h1 class="modalMsg-message1"></h1>
-                <button class="modalMsg-button1"></button>
+                <button class="modalMsg-button1 ok-btn"></button>
             </div>
           </div>
 

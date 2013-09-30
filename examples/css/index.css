@@ -1,0 +1,26 @@
+/* style your own modal popup! */
+.my-own-modalMsg {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px grey;
+}
+.my-own-modalMsg .ok-btn {
+  background-color: #2368D9;
+  border: solid blue 2px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 33%;
+}
+.my-own-modalMsg button {
+  cursor: pointer;
+  background-color: none;
+
+}
+.my-own-modalMsg .ok-btn:hover {
+  background-color: #0D48A6;
+}
+
+.my-own-modalMsg .close-btn {
+  font-weight: bold;
+  float: right;
+}

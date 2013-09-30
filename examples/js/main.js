@@ -1,5 +1,36 @@
 $(document).ready(function () {
 
+  $("#action_modal_example").click(function () {
+
+    $('#modal_example').modalMsg({
+      messages : ['Lorem ipsum dolor sit amet',
+        'consectetur adipiscing elit.'],
+      buttons : [
+        {
+          name : 'OK',
+          callback : null
+        },
+        {
+          name : 'Alert!',
+          callback : function () {
+            alert("don't panic ;)")
+          },
+          defaultClose: true
+        },
+        {
+          name : 'Alert^2!',
+          callback : function () {
+            alert("now you cant panic ;)")
+          },
+          defaultClose: false 
+        }
+      ],
+      overlayBlocked : false
+      
+    });
+
+  });
+
   $("#action_modal_1").click(function () {
 
     $('#modal_1').modalMsg({
@@ -7,6 +38,10 @@ $(document).ready(function () {
       buttons : [
         {
           name : 'OK',
+          callback : null
+        },
+        {
+          name : 'x',
           callback : null
         }
       ]
